@@ -1,0 +1,20 @@
+.answer-container {
+    display: flex;
+    margin-bottom: 15px;
+    width: 100%;
+    font-size: 15px;
+    border: 0.1rem solid rgb(86, 165, 235, 0.25);
+    background-color: white;
+    color: #313E50;
+}
+
+.answer-container:hover {
+cursor: pointer;
+box-shadow: wheat ;
+
+}
+
+.choice-text {
+    padding: 5px;
+}
+
