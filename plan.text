@@ -1,0 +1,13 @@
+Plan
+1. User opens up their browser to a welcome page that introduces the game, on the welcome page is a "start"button
+2. the start button will take them to the first question
+3. There will be 10 questions, each containing 4 multiple choice answers
+4. the user will click on their choice button, if it is wrong it will highlight green, if wrong it will hilight red.
+5. There will be a score keeper/ tracker of some sort
+6. There will be a finish button to take you back to the starting page
+
+// Create a homepage x
+// build questions with multiple choice options x
+// style the multiple choice options x
+// write out questions x
+// create a function to make the start button take you to the first question
