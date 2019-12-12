@@ -9,7 +9,11 @@
 var startButton = document.getElementById("Begin")
 startButton.addEventListener('click', startGame)
 var nextQuestionButton = document.getElementById("Next")
-nextQuestionButton.addEventListener('click', nextQuestion)
+nextQuestionButton.addEventListener('click', () => {
+   //make the next button work and take you to the next question
+   questionIndex++
+   nextQuestion();
+})
 var questionContainerElement = document.getElementById("questionContainer")
 var triviaQuestion = document.getElementById("Question")
 var triviaAnswer = document.getElementById("answer-container")
@@ -139,11 +143,11 @@ function nextQuestion() {
 //display question and answer options in container. The next button also needs to show.
 function loadNewQuestion(question) {
    triviaQuestion.innerText = question.question
-   // nextQuestionButton.classList.remove('hide')
+   nextQuestionButton.classList.remove('hide')
    question.answers.forEach(answer => {
       let button = document.createElement('button')
       button.innerText = answer.choice
-      button.classList.add('btn')
+      button.classList.add('button')
       if (answer.correct) {
          button.dataset.correct = answer.correct
       }
@@ -153,15 +157,32 @@ function loadNewQuestion(question) {
 }
 // 'choice' text still appears on top of answer options. 
 function resetContainer() {
-   // nextQuestionButton.classList.add('hide')
+   nextQuestionButton.classList.add('hide')
    while(triviaAnswer.firstChild) {
       triviaAnswer.removeChild(triviaAnswer.firstChild)
    }
 }
-
+//is the chosen answer right or wrong?
 function chooseAnswer(event) {
-  
-
+  let chosenAnswer = event.target
+  let correctAnswer = chosenAnswer.dataset.correct
+   answerStatus(document.body, correctAnswer)
+   Array.from(triviaAnswer.children).forEach(button => {
+      answerStatus(button, button.dataset.correctAnswer)
+   })
+   nextQuestionButton.classList.remove('hide')
 }
 
+function answerStatus(element, correctAnswer) {
+   resetStatus(element)
+   if (correctAnswer) {
+      element.classList.add('correct')
+   } else {
+      element.classList.add('wrong')
+   }
+}
 
+function resetStatus(element) {
+   element.classList.remove('correct')
+   element.classList.remove('wrong')
+}
