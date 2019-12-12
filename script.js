@@ -130,6 +130,7 @@ nextQuestion();
 
 // grab a question
 function nextQuestion() {
+   resetContainer()
     loadNewQuestion(questionOrder[questionIndex]) 
 
  }
@@ -138,22 +139,27 @@ function nextQuestion() {
 //display question and answer options in container. The next button also needs to show.
 function loadNewQuestion(question) {
    triviaQuestion.innerText = question.question
-   nextQuestionButton.classList.remove('hide')
+   // nextQuestionButton.classList.remove('hide')
    question.answers.forEach(answer => {
-      let answerButton = document.createElement('button')
-      answerButton.innerText = answer.choice
-      answerButton.classList.add('btn')
+      let button = document.createElement('button')
+      button.innerText = answer.choice
+      button.classList.add('btn')
       if (answer.correct) {
-         answerButton.dataset.correct = answer.correct
+         button.dataset.correct = answer.correct
       }
-      answerButton.addEventListener('click', chooseAnswer)
-      triviaAnswer.appendChild(answerButton)
+      button.addEventListener('click', chooseAnswer)
+      triviaAnswer.appendChild(button)
    });
-   chooseAnswer();
+}
+// 'choice' text still appears on top of answer options. 
+function resetContainer() {
+   // nextQuestionButton.classList.add('hide')
+   while(triviaAnswer.firstChild) {
+      triviaAnswer.removeChild(triviaAnswer.firstChild)
+   }
 }
 
-
-function chooseAnswer() {
+function chooseAnswer(event) {
   
 
 }
