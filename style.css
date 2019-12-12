@@ -4,8 +4,9 @@ body {
 }
 button {
     --color-neutral: #6DA34D;
-    --color-wrong: red;
     --color-correct: green;
+    --color-wrong: red;
+   
 }
 
 * {
@@ -33,15 +34,10 @@ button {
     text-decoration: none;
     margin: 10px;
     transition: all 0.5s;
-    background-color: color(var(--color), white);
+    background-color:color(var(--color), white);
 
 
 }
-
-/* COME BACK TO THIS */
-/* .justify-center {
-    justify-content: center;
-} */
 
 #answer-container {
     display: grid;
@@ -75,6 +71,18 @@ button:hover {
     display: grid;
     justify-content: center;
     align-items: center;
+}
+#Question {
+font-size: 30px;
+}
+
+.scoreTracker {
+    text-align: center;
+}
+
+h1 {
+    font-family: 'Fira Sans Condensed', sans-serif;
+    text-align: center;
 }
 
 

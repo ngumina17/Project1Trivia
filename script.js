@@ -14,6 +14,10 @@ nextQuestionButton.addEventListener('click', () => {
    questionIndex++
    nextQuestion();
 })
+let finalScore = 0
+let scoreTracker = document.querySelector("span")
+// console.log(scoreTracker)
+
 var questionContainerElement = document.getElementById("questionContainer")
 var triviaQuestion = document.getElementById("Question")
 var triviaAnswer = document.getElementById("answer-container")
@@ -23,102 +27,114 @@ let questions = [
     // contd: https://www.nationalgeographic.com/environment/global-warming/green-lifestyle-quiz/#close
  {
     question: "What date is recognized as Earth Day in the United States and other parts of the world?",
+    correct: "April 22",
     answers : [
-    {choice: "April 22", correct: true},
-    {choice: "January 15", correct: false},
-    {choice: "June 26", correct: false},
-    {choice: "November 9", correct: false}
+     {choice:"April 22"},
+     {choice:"January 15"}, 
+     {choice:"June 26"}, 
+     {choice:"November 9"},
     ]
  },
  
  {
     question: "Patagonia produces some of its apparel using polyester fabric that includes what upcycled items?",
+    correct: "Plastic Bottles",
     answers: [
-    {choice: "Plastic bags", correct: false},
-    {choice: "Fishing nets", correct: false},
-    {choice: "Plastic bottles", correct: true},
-    {choice: "Foam cups", correct: false}
+    {choice: "Plastic bags"},
+    {choice: "Fishing nets"},
+    {choice: "Plastic bottles"}, 
+    {choice: "Foam cups"}, 
     ]
  },
  {
     question: "How many trees does recycling a ton of paper save?",
+    correct: "17",
     answers: [
-    {choice: "6", correct: false},
-    {choice: "17", correct: true},
-    {choice: "100", correct: false},
-    {choice: "75", correct: false}
+    {choice: "6"},
+    {choice: "17"}, 
+    {choice: "100"},
+    {choice: "75"}, 
     ]
  },
  {
      question: "The US Department of Energy (DOE) recommends turning off your monitor and placing the computer on sleep mode if you are not going to use it for more than ___",
+     correct: "20 minutes",
      answers: [
-     {choice: "2 hours", correct: false},
-     {choice: "6 hours", correct: false},
-     {choice: "45 minutes", correct: false},
-     {choice: "20 minutes", correct: true}
+     {choice: "2 hours"},
+     {choice: "6 hours"},
+     {choice: "45 minutes"},
+     {choice: "20 minutes"}
      ]
  },
  
  {
     question: "Recycling plastic saves ____ times as much energy as burning it in an incinerator.",
+    correct: "2 times",
     answers: [
-    {choice: "2 times", correct: true},
-    {choice: "0.5 times", correct: false},
-    {choice: "3 times", correct: false},
-    {chocie: "None, it takes more energy to recycle", correct: false}
+    {choice: "2 times"},
+    {choice: "0.5 times"},
+    {choice: "3 times"},
+    {chocie: "None, it takes more energy to recycle"}
     ]
  },
  
  {
      question: "How much energy does recycling just one aluminium can save?",
+     correct: "Enough to power a TV for 3 hours",
      answers: [
-     {choice: "Enough to power a microwave for 30 minutes", correct: false},
-     {choice: "Enough to power the average American home for 4 days", correct: false},
-     {choice: "Enough to power a computer for 15 minutes", correct: false},
-     {choice: "Enough to power a TV for 3 hours", correct: true}
+     {choice: "Enough to power a microwave for 30 minutes"},
+     {choice: "Enough to power the average American home for 4 days"},
+     {choice: "Enough to power a computer for 15 minutes"},
+     {choice: "Enough to power a TV for 3 hours"}
      ]
  },
  
  {
      question: "What type of supermarket bag is more ecofriendly, paper or plastic?",
+     correct: "None of the above",
      answers: [
-     {choice: "Either is fine", correct: false},
-     {choice: "Paper", correct: false},
-     {choice:"Plastic", correct: false},
-     {choice: "None of the above", correct: true}
+     {choice: "Either is fine"},
+     {choice: "Paper"},
+     {choice:"Plastic"},
+     {choice: "None of the above"}
      ]
  },
  
  {
     question: "Approximately how much global electricity output is produced from renewable sources?",
+    correct: "10 percent",
     answers :[
-    {choice: "1 percent", correct: false},
-    {choice: "10 percent", correct: true},
-    {choice: "5 percent", correct: false},
-    {choice: " 20 percent", correct: false}
+    {choice: "1 percent"},
+    {choice: "10 percent"},
+    {choice: "5 percent"},
+    {choice: " 20 percent"}
     ]
  },
  
  {
     question: "Dropping the thermostat from 70 to 68 degrees saves you about how much on your heating costs?",
+    correct: "5 percent",
     answers: [
-    {choice: "10 percent", correct: false},
-    {choice: "20 percent", correct: false},
-    {choice: "1 percent", correct: false},
-    {choice: "5 percent", correct: true}
+    {choice: "10 percent"},
+    {choice: "20 percent"},
+    {choice: "1 percent"},
+    {choice: "5 percent"}
     ]
  },
  
  {
     question: "Which of the following is an alternative material for making paper?",
+    correct: "All of the above",
     answers:[
-    {choice: "Panda excrement", correct: false},
-    {choice: "Hemp", correct: false},
-    {choice: "Sheepskin", correct: false},
-    {choice: "All of the above", correct: true}
+    {choice: "Panda excrement"},
+    {choice: "Hemp"},
+    {choice: "Sheepskin"},
+    {choice: "All of the above"}
     ]
  }
  ]
+
+
 let questionOrder, questionIndex
 
 //questions are hidden. once clicked, then first question appears. and the begin button disappears
@@ -153,7 +169,12 @@ function loadNewQuestion(question) {
       }
       button.addEventListener('click', chooseAnswer)
       triviaAnswer.appendChild(button)
+      scoreTracker.innerHTML = finalScore
    });
+}
+// score tracker
+function displayScore () {
+
 }
 // 'choice' text still appears on top of answer options. 
 function resetContainer() {
@@ -162,15 +183,23 @@ function resetContainer() {
       triviaAnswer.removeChild(triviaAnswer.firstChild)
    }
 }
-//is the chosen answer right or wrong?
+//is the chosen answer right or wrong
 function chooseAnswer(event) {
   let chosenAnswer = event.target
-  let correctAnswer = chosenAnswer.dataset.correct
+  let correctAnswer = chosenAnswer.question.correct
+  console.log(chosenAnswer, correctAnswer)
    answerStatus(document.body, correctAnswer)
    Array.from(triviaAnswer.children).forEach(button => {
       answerStatus(button, button.dataset.correctAnswer)
    })
-   nextQuestionButton.classList.remove('hide')
+   if (questionOrder.length > questionIndex + 1) {
+      nextQuestionButton.classList.remove('hide')
+   } else {
+      startButton.innerText = 'Play Again'
+      startButton.classList.remove('hide')
+      nextQuestionButton.classList.add('hide')
+   }
+   
 }
 
 function answerStatus(element, correctAnswer) {
@@ -186,3 +215,6 @@ function resetStatus(element) {
    element.classList.remove('correct')
    element.classList.remove('wrong')
 }
+
+
+
