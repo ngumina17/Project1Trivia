@@ -9,15 +9,14 @@ CODE USED:
 Plain old HTML, CSS, and Javascript! All I know at the moment!
 
 
-SCREENSHOTS:
-////INSERT SCREENSHOTS HERE//////
-While this may be a very simple feature, I was able to get the text to change color once an answer was clicked on, 
-
-
-
 FEATURES:
 
-I had some pretty big plans for this project before it was introduced. I wanted to make it super fancy with a bunch of images and animations. I was thinking I could somewhat model it after the memory game we had to complete as pre-course work prior the cohort beginning. 
+I had some pretty big plans for this project when it was introduced. I wanted to make it super fancy with a bunch of images and animations. I was thinking I could somewhat model it after the memory game we had to complete as pre-course work prior the cohort beginning. 
+
+One feature that i'm proud of is that I was able to get the text to change color when a user answers a question. No matter which question you click on, the text inside the answer container will change red or green depending on if the answer is correct or wrong. 
+
+<img src="Macintosh HD⁩ ▸ ⁨Users⁩ ▸ ⁨nicolegumina⁩ ▸ ⁨sei⁩ ▸ ⁨projects⁩ ▸ ⁨Trivia⁩ ▸ ⁨Project1Trivia⁩ ▸ ⁨screenshots⁩" alt="feature">
+
 
 
 INSTRUCTIONS ON USE:
