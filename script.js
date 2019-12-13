@@ -14,13 +14,10 @@ nextQuestionButton.addEventListener('click', () => {
    questionIndex++
    nextQuestion();
 })
-let finalScore = 0
-let scoreTracker = document.querySelector("span")
-// console.log(scoreTracker)
+
 var questionContainerElement = document.getElementById("questionContainer")
 var triviaQuestion = document.getElementById("Question")
 var triviaAnswer = document.getElementById("answer-container")
-// var correct = document.getElementsByClassName("choiceText")
 let questions = [
     //sources for questions: https://earth911.com/inspire/eco-quiz/
     // contd: https://uncw.edu/campuslife/documents/recyclingtriviaquestions.pdf
@@ -144,7 +141,6 @@ nextQuestion();
 function nextQuestion() {
    resetContainer()
     loadNewQuestion(questionOrder[questionIndex]) 
-
  }
 
 
@@ -161,7 +157,6 @@ function loadNewQuestion(question) {
       }
       button.addEventListener('click', chooseAnswer)
       triviaAnswer.appendChild(button)
-      // scoreTracker.innerHTML = finalScore
    });
 }
 
