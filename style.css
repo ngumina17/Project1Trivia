@@ -51,13 +51,13 @@ button {
     
 }
 
-button.correct {
+.btn.correct {
     color: var(--color-correct);
 }
 
-button.wrong {
+.btn.wrong {
     color: var(--color-wrong);
-}
+} 
 
 button:hover {
     border-color: darkgrey;
