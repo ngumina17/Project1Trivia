@@ -15,8 +15,8 @@ I had some pretty big plans for this project when it was introduced. I wanted to
 
 One feature that i'm proud of is that I was able to get the text to change color when a user answers a question. No matter which question you click on, the text inside the answer container will change red or green depending on if the answer is correct or wrong. 
 
-<img src="Macintosh HD⁩/⁨Users⁩/⁨nicolegumina⁩/⁨sei⁩/projects⁩/Trivia⁩/Project1Trivia⁩/screenshots/Screen Shot 2019-12-13 at 11.05.20 AM.png⁩" alt="feature">
-
+<!-- <img src="Macintosh HD⁩/⁨Users⁩/⁨nicolegumina⁩/⁨sei⁩/projects⁩/Trivia⁩/Project1Trivia⁩/screenshots/Screen Shot 2019-12-13 at 11.05.20 AM.png⁩" alt="feature">
+ -->
 
 
 INSTRUCTIONS ON USE:
