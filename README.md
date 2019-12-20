@@ -1,6 +1,6 @@
 Project Title: Sustainability Trivia
 
-MOTIVATION:
+# MOTIVATION:
 
 When this project was first introduced, I knew I wanted to pursue the trivia option. At first I was thinking of doing a Game of Thrones theme or Harry Potter, I then had a 1:1 with our outcomes coach who mentioned I should try and gear my projects towards the industry I would like to begin my software engineering career in. So, I created a trivia game based off of sustainability! A good way for the end user to learn new ways to conserve our planet!
 

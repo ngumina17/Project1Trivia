@@ -1,41 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Go Green Trivia</title>
-    <link rel="stylesheet" href="style.css"></link>
+    <link rel="stylesheet" href="style.css">
+    </link>
     <link href="https://fonts.googleapis.com/css?family=Fira+Sans+Condensed&display=swap" rel="stylesheet">
-<h1>Sustainability Trivia, Test Your Knowledge!</h1>
+    <h1>Sustainability Trivia, Test Your Knowledge!</h1>
 </head>
+
 <body>
     <!-- //container which holds the question and answer options -->
-     <div class="container">
-                <div id="questionContainer" class="hide">
-                    <div id="Question">Insert Question Here</div>
-                                <div id="answer-container" class="answer-grid">
-                                <button class="choiceText">Choice 1</p>
-                                <button class="choiceText">Choice 2</p>
-                                <button class="choiceText">Choice 3</p>
-                                <button class="choiceText">Choice 4</p>
-                                </div>
-                </div>               
-                    <div class="controls">
-                        <button id = "Begin" class="begin-button btn">Begin</button>
-                        <button id = "Next" class="next-button btn hide">Next Question</button>
+    <div class="container">
+        <div id="questionContainer" class="hide">
+            <div id="Question">Insert Question Here</div>
+            <div id="answer-container" class="answer-grid">
+                <button class="choiceText">Choice 1</p>
+                    <button class="choiceText">Choice 2</p>
+                        <button class="choiceText">Choice 3</p>
+                            <button class="choiceText">Choice 4</p>
+            </div>
+        </div>
+        <div class="controls">
+            <button id="Begin" class="begin-button btn">Begin</button>
+            <button id="Next" class="next-button btn hide">Next Question</button>
+        </div>
+
+        <div id = "scoreTracker">
+                         <button>Score:
+                             <span  id = "score"> 0</span>
+                         </button>
                     </div>
 
-                    <!-- <div id = "scoreTracker">
-                         <button id = "Score">Score:
-                             <span> 0</span>
-                         </button>
-                    </div> -->
-                    
-                
-        </div> 
+
+    </div>
 
 
- <script src="script.js"></script>   
+    <script src="script.js"></script>
 </body>
+
 </html>
